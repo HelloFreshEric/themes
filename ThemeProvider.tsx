@@ -22,7 +22,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
     allDynamicThemeProviders[customBrand || contextBrand];
 
   return (
-    <ThemeProviderContext.Provider value={{systemCountry, customBrand}}>
+    <ThemeProviderContext.Provider value={{ systemCountry, customBrand }}>
       <DynamicThemeProvider>
         {children}
       </DynamicThemeProvider>

@@ -1,20 +1,17 @@
-import { PrimitiveConfig } from '@/libs/config';
 import { Brand } from './brands';
-import { Theme } from 'styled-system';
 
-export type ThemeSpecification = PrimitiveConfig &
-  Theme & {
-    name: Brand;
-    colors: Record<ColorFamily, Record<ColorScale, string>>;
-    fonts: Record<FontFamily, string>;
-    fontSizes: Record<FontSize, string>;
-    fontWeights: Record<FontWeight, number>;
-    lineHeights: Record<LineHeight, string>;
-    space: Record<Space, string | number>;
-    shadows: Record<Shadow, string>;
-    radii: Record<BorderRadius, string | number>;
-    breakpoints: string[] & Record<Breakpoint, string>;
-  };
+export type ThemeSpecification = {
+  name: Brand;
+  colors: Record<ColorFamily, Record<ColorScale, string>>;
+  fonts: Record<FontFamily, string>;
+  fontSizes: Record<FontSize, string>;
+  fontWeights: Record<FontWeight, number>;
+  lineHeights: Record<LineHeight, string>;
+  space: Record<Space, string | number>;
+  shadows: Record<Shadow, string>;
+  radii: Record<BorderRadius, string | number>;
+  breakpoints: string[] & Record<Breakpoint, string>;
+};
 
 export type ColorFamily =
   | 'primary'

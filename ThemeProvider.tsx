@@ -3,7 +3,7 @@ import React, { createContext } from 'react';
 import { Brand, useBrand } from './brands';
 import SystemCountry from './brands/SystemCountry';
 
-import allDynamicThemeProviders from './allDynamicThemeProviders';
+import allDynamicThemes from './allDynamicThemes';
 
 type ThemeProviderProps = {
   systemCountry: SystemCountry;
@@ -18,14 +18,11 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
   customBrand,
 }) => {
   const contextBrand = useBrand();
-  const DynamicThemeProvider =
-    allDynamicThemeProviders[customBrand || contextBrand];
+  const theme = allDynamicThemes[customBrand || contextBrand];
 
   return (
-    <ThemeProviderContext.Provider value={{ systemCountry, customBrand }}>
-      <DynamicThemeProvider>
-        {children}
-      </DynamicThemeProvider>
+    <ThemeProviderContext.Provider value={theme}>
+      {children}
     </ThemeProviderContext.Provider>
   );
 };

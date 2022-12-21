@@ -1,0 +1,11 @@
+{
+    "name": "@hellofresh/themes",
+    "version": "1.0.0",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^4.9.4"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+    }
+}

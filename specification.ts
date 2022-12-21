@@ -1,5 +1,5 @@
 import { PrimitiveConfig } from '@/libs/config';
-import { Brand } from '@/libs/system-country';
+import { Brand } from './brands';
 import { Theme } from 'styled-system';
 
 export type ThemeSpecification = PrimitiveConfig &

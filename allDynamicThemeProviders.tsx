@@ -1,6 +1,6 @@
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 
-import { Brand } from '@/libs/system-country';
+import { Brand } from './brands';
 
 import type { ThemeSpecification } from './specification';
 import React from 'react';

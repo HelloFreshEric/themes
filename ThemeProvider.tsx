@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
-import { Brand, useBrand } from '@/libs/system-country';
+import { Brand, useBrand } from './brands';
+import SystemCountry from './brands/SystemCountry';
 
 import allDynamicThemeProviders from './allDynamicThemeProviders';
 
 type ThemeProviderProps = {
-  customBrand?: Brand;
+  systemCountry: SystemCountry;
+  customBrand: Brand;
 };
 
-const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = ({
+export const ThemeProviderContext = createContext<ThemeProviderProps>();
+
+export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = ({
   children,
+  systemCountry,
   customBrand,
 }) => {
   const contextBrand = useBrand();
   const DynamicThemeProvider =
     allDynamicThemeProviders[customBrand || contextBrand];
 
-  return <DynamicThemeProvider>{children}</DynamicThemeProvider>;
+  return (
+    <ThemeProviderContext.Provider value={{systemCountry, customBrand}}>
+      <DynamicThemeProvider>
+        {children}
+      </DynamicThemeProvider>
+    </ThemeProviderContext.Provider>
+  );
 };
-
-export default ThemeProvider;

@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Brand } from './brands';
 
-import type { ThemeSpecification } from './specification';
-
 const allDynamicThemes: Record<
   Brand,
   React.ComponentType<React.PropsWithChildren<unknown>>

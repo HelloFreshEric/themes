@@ -1,7 +1,8 @@
 import React, { createContext } from 'react';
 
-import { Brand, useBrand } from './brands';
+import { Brand } from './brands';
 import SystemCountry from './brands/SystemCountry';
+import { getCurrentBrandFromSystemCountry } from './brands/brandCountries';
 
 import allDynamicThemes from './allDynamicThemes';
 
@@ -17,7 +18,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>
   systemCountry,
   customBrand,
 }) => {
-  const contextBrand = useBrand();
+  const contextBrand = getCurrentBrandFromSystemCountry(systemCountry);
   const theme = allDynamicThemes[customBrand || contextBrand];
 
   return (

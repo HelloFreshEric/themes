@@ -1,35 +1,23 @@
-import React from 'react';
-
 import { Brand } from './brands';
 
-const allDynamicThemes: Record<
-  Brand,
-  React.ComponentType<React.PropsWithChildren<unknown>>
-> = {
-  [Brand.chefsplate]: React.lazy(async () => {
-    return await import('./chefsplate');
-  }),
-  [Brand.everyplate]: React.lazy(async () => {
-    return await import('./everyplate');
-  }),
-  [Brand.factor]: React.lazy(async () => {
-    return await import('./factor');
-  }),
-  [Brand.goodchop]: React.lazy(async () => {
-    return await import('./goodchop');
-  }),
-  [Brand.greenchef]: React.lazy(async () => {
-    return await import('./greenchef');
-  }),
-  [Brand.hellofresh]: React.lazy(async () => {
-    return await import('./hellofresh');
-  }),
-  [Brand.petstable]: React.lazy(async () => {
-    return await import('./petstable');
-  }),
-  [Brand.youfoodz]: React.lazy(async () => {
-    return await import('./youfoodz');
-  }),
+import chefsPlateTheme from './chefsplate';
+import everyPlateTheme from './everyplate';
+import factorTheme from './factor';
+import goodchopTheme from './goodchop';
+import greenChefTheme from './greenchef';
+import helloFreshTheme from './hellofresh';
+import petstableTheme from './petstable';
+import youfoodzTheme from './youfoodz';
+
+const allDynamicThemes = {
+  [Brand.chefsplate]: chefsPlateTheme,
+  [Brand.everyplate]: everyPlateTheme,
+  [Brand.factor]: factorTheme,
+  [Brand.goodchop]: goodchopTheme,
+  [Brand.greenchef]: greenChefTheme,
+  [Brand.hellofresh]: helloFreshTheme,
+  [Brand.petstable]: petstableTheme,
+  [Brand.youfoodz]: youfoodzTheme,
 };
 
 export default allDynamicThemes;

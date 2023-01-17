@@ -63,7 +63,7 @@ const colors: ThemeSpecification['colors'] = {
   },
   neutral: {
     '100': '#FFFFFF',
-    '200': '#F0F2F2',
+    '200': '#FF00FF',
     '300': '#D4D9D8',
     '400': '#AFB3B2',
     '500': '#7D807F',
